@@ -200,7 +200,7 @@ Install dependencies:
 
 ```powershell
 cd D:\nga-wolf
-python -m pip install lark-oapi customtkinter
+python -m pip install -r requirements.txt
 ```
 
 Set required environment variables:
@@ -275,7 +275,6 @@ python .\nga_wolf_gui.py
 Run the pywebview + React preview UI:
 
 ```powershell
-python -m pip install pywebview pystray pillow
 cd .\webui
 npm.cmd ci
 npm.cmd run build
@@ -556,7 +555,7 @@ The script stores pushed reply ids, handled command ids, and deferred quiet-hour
 ### Build The EXE
 
 ```powershell
-python -m pip install pyinstaller
+python -m pip install -r requirements-dev.txt
 python -m PyInstaller --noconfirm --clean --onefile --windowed --name NGA-Wolf-Watcher-Classic --icon .\assets\app_icon.ico --add-data ".\assets\app_icon.ico;assets" --add-data ".\assets\app_icon.png;assets" --collect-all lark_oapi --collect-all customtkinter --hidden-import Crypto.Cipher.AES .\nga_wolf_gui.py
 ```
 
@@ -575,7 +574,7 @@ cd .\webui
 npm.cmd ci
 npm.cmd run build
 cd ..
-python -m pip install pywebview pystray pillow pyinstaller
+python -m pip install -r requirements-dev.txt
 python -m PyInstaller --noconfirm --clean .\NGA-Wolf-Watcher-Web.spec
 ```
 

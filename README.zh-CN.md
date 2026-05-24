@@ -202,7 +202,7 @@ BAT 会自动安装 `lark-oapi`。第一次运行时，如果没有 `.nga_seen.j
 
 ```powershell
 cd D:\nga-wolf
-python -m pip install lark-oapi customtkinter
+python -m pip install -r requirements.txt
 ```
 
 设置必填环境变量：
@@ -277,9 +277,8 @@ python .\nga_wolf_gui.py
 启动 pywebview + React 预览版界面：
 
 ```powershell
-python -m pip install pywebview
 cd .\webui
-npm.cmd install
+npm.cmd ci
 npm.cmd run build
 cd ..
 python .\nga_wolf_webgui.py
@@ -558,7 +557,7 @@ Prompt 使用方式：
 ### 打包 EXE
 
 ```powershell
-python -m pip install pyinstaller
+python -m pip install -r requirements-dev.txt
 python -m PyInstaller --noconfirm --clean --onefile --windowed --name NGA-Wolf-Watcher-Classic --icon .\assets\app_icon.ico --add-data ".\assets\app_icon.ico;assets" --add-data ".\assets\app_icon.png;assets" --collect-all lark_oapi --collect-all customtkinter --hidden-import Crypto.Cipher.AES .\nga_wolf_gui.py
 ```
 
@@ -574,10 +573,10 @@ python -m PyInstaller --noconfirm --clean .\NGA-Wolf-Watcher.spec
 
 ```powershell
 cd .\webui
-npm.cmd install
+npm.cmd ci
 npm.cmd run build
 cd ..
-python -m pip install pywebview pyinstaller
+python -m pip install -r requirements-dev.txt
 python -m PyInstaller --noconfirm --clean .\NGA-Wolf-Watcher-Web.spec
 ```
 
