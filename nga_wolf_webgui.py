@@ -416,14 +416,16 @@ class PreviewApi:
                 "botChannels": ["feishu", "wechat"],
                 "watchModes": ["author", "thread_author", "both"],
                 "feishuIdTypes": ["chat_id", "open_id", "union_id", "user_id"],
-                "aiProviders": ["codex", "claude", "custom"],
+                "aiProviders": ["codex", "claude", "codewhale", "custom"],
                 "aiModels": {
                     "codex": ["default", "auto", *ai_analysis.model_options("codex")],
                     "claude": ["default", "auto", *ai_analysis.model_options("claude")],
+                    "codewhale": ["default", "auto", *ai_analysis.model_options("codewhale")],
                 },
                 "aiReasoning": {
                     "codex": ["default", *ai_analysis.reasoning_effort_options("codex")],
                     "claude": ["default", *ai_analysis.reasoning_effort_options("claude")],
+                    "codewhale": ["default", *ai_analysis.reasoning_effort_options("codewhale")],
                 },
             },
             "logs": self.read_logs(0),
@@ -481,7 +483,7 @@ class PreviewApi:
         try:
             payload = legacy.nga_feishu_watch.fetch_nga_thread_page(
                 tid,
-                99999,
+                1,
                 cookie,
                 legacy.int_value(merged, "timeout", 20),
                 0,
