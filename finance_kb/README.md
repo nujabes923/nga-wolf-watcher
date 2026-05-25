@@ -4,6 +4,8 @@ This folder is an experimental private A-share knowledge-base scaffold.
 
 It is intentionally independent from the watcher runtime. The watcher still collects NGA posts; this module reads the saved AI history and builds research artifacts.
 
+Version marker: `codex-gpt5-finance-kb`. See `VERSION.md` and `docs/finance_kb_codex_provenance.md`. Keep this separate from any dsv4pro experiment until Neal explicitly decides to merge ideas.
+
 ## Quick Sample
 
 ```powershell

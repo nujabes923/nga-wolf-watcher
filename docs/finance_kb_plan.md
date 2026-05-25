@@ -2,6 +2,8 @@
 
 This branch is an experiment and should not be merged into the upstream project until the workflow feels useful.
 
+Version marker: this is the `codex-gpt5-finance-kb` experiment. See `docs/finance_kb_codex_provenance.md` before comparing or merging with any dsv4pro implementation.
+
 ## Goal
 
 Build a private, local-first A-share research knowledge base from monitored NGA analysts such as 狼大. The system should preserve the original timestamped posts, extract structured theses, attach market context as it becomes available, and support later hindsight reviews without mixing future data into the original context.
