@@ -10,6 +10,7 @@ __pycache__/
 *.pyc
 webui/node_modules/
 webui/dist/
+finance-kb/
 build/
 /dist/
 *.spec
